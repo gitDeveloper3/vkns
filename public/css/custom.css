@@ -1,0 +1,51 @@
+body{
+  margin-top: 100px;
+  margin-left: 100px;
+
+}
+.dropdown-menu > li {
+    display: inline-block;
+    float:left;
+}
+.open > ul {
+    display: inline-flex !important;
+}
+.navbar-nav>li>.dropdown-menu {
+
+    margin-top: 50px;
+}
+
+.menu{
+  position: relative;
+    top: -75px;
+    background-color: transparent;
+    border: 0px;
+}
+
+
+
+/* red dot and their relative movement path*/
+
+#contentContainer {
+	position: relative;
+	left:100px;
+	width: 500px;
+	height: 5px;
+	border: 1px black solid;
+	overflow: visible;;
+	background-color: #EEE;
+	cursor: pointer;
+  z-index: 1;
+}
+#thing {
+	position: absolute;
+  width:20px;
+  height:20px;
+	left: 50px;
+	top: -10px;
+  z-index: 2;
+  border-radius: 50%;
+  background-color:red;
+	transition: left .5s cubic-bezier(.42,-0.3,.78,1.25),
+			top .5s cubic-bezier(.42,-0.3,.78,1.25);
+}

@@ -1,0 +1,79 @@
+/*navbar*/
+.navbar-default {
+    background-color: #145A32;
+    border-color: #fff;
+}
+.navbar{
+    background-image: none;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #C39409;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #C39409;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+/* ooter */
+.footer-text{
+  color: #fff;
+}
+
+
+
+
+.body-div{
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+
+  align-items: start;
+
+}
+.secretariate-body{
+
+}
+.section-div{
+  background-color: #fff;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 4rem 0;
+
+
+
+}
+
+.heading{
+  text-align: center;
+  color: BLACK;
+  font-size: 50px;
+}
+
+.card-style{
+  width: 40rem;
+  justify-content: center;
+  align-items: center;
+background-color: pink;
+  height: 18rem;
+  margin: 4rem;
+  background-color: blue;
+}
+
+.secretariate-card-style{
+  width: 30rem;
+  justify-content: center;
+  align-items: center;
+background-color: pink;
+  height: 18rem;
+  margin: 4rem 1rem;
+  background-color: blue;
+}
