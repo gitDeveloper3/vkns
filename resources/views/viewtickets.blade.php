@@ -37,11 +37,11 @@
   <td>{{ $value->created_at }}</td>
   <td>{{ $value->file }}</td>
 
-  <td><form class="" action="{{route('ojo_createtickets')}}" method="get">
+  <td><form class="" action="{{route('admin-reply-ticket')}}" method="get">
     @csrf
   <button type="submit" class="btn btn-primary">Send Response</button>
   </form></td>
-  <td><form class="" action="{{route('foward')}}" method="post">
+  <td><form class="" action="{{route('admin-foward-ticket')}}" method="post">
     @csrf
     <input type="text" id="uniqueid" name="uniqueid" value="{{$value->uniqueid}}" hidden>
   <button type="submit" class="btn btn-primary">Foward Back to OJO</button>

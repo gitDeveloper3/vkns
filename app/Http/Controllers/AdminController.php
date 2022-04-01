@@ -7,20 +7,35 @@ use App\Models\ombudsman_queue;
 use App\Models\SendTicket;
 use App\Models\Notes;
 use DB;
-class ojo_Controller extends Controller
+class AdminController extends Controller
 {
+public function adminFowardSearch(Request $request){
+  $tickets=Sendticket::all();
+
+return view('secretariate.foward-search')->with('list',$tickets);
+}
 
 
-public function foward(Request $request){
+public function fowardTicket(Request $request){
+
   $uniqid=$request->input('uniqueid');
   SendTicket::where(['queue'=>"ombudsman",'uniqueid'=>$uniqid])
             ->update(['queue' => 'department']);
+  $tickets=Sendticket::all();
+          return view('secretariate.foward-search')->with('list',$tickets);
+
 }
 
-    public function create(Request $request){
-      return view('ojo_createticket');
+    public function createTicket(Request $request){
+        $uniqid=$request->input("selected");
+      return view('secretariate.escalate')->with("selected",$uniqid);
     }
-    public function sendticket(Request $request){
+
+    public function replyTicket(Request $request){
+        $uniqid=$request->input("selected");
+      return view('ojo_createticket')->with("selected",$uniqid);
+    }
+    public function sendTicket(Request $request){
 
       //$validData=$this->validate($request,['ticketnumber'=>'required']);
       $input=$request->all();
@@ -50,19 +65,19 @@ public function foward(Request $request){
 //$latest->notes()->save($notes);
 //$res->ombudsman_queue()->notes()->save($notes);
   // return redirect()->route('test')->with('error',$notes2);
-return redirect('/createsearch');
+return redirect('/admin-create-search');
     }
 
-    public function listusers(Request $request){
+    public function getUsers(Request $request){
       $list=user::select("name")->get();
       return view('ojo_users')->with('list',$list);
     }
-    public function listemails(Request $request){
+    public function getEmails(Request $request){
       $list=user::select("email","name")->get();
       return view('emails')->with('list',$list);
     }
 
-    public function piechart(Request $request){
+    public function pieChart(Request $request){
       $list=user::all();
       return view('pie')->with('products',$products);
     }
@@ -74,6 +89,11 @@ return redirect('/createsearch');
     public function createSearch(Request $request){
       $tickets=Sendticket::all();
       return view('search')->with('list',$tickets);
+    }
+
+    public function viewTickets(Request $request){
+      $tickets=Sendticket::where('queue',"ombudsman")->get();
+        return view('viewtickets')->with('list',$tickets);
     }
 
 

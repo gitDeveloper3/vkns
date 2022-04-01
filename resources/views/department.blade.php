@@ -1,3 +1,3 @@
 
-@include("department.body")
+@include("liason.body")
 @include ("parts.footer")

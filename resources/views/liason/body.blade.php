@@ -6,7 +6,7 @@
         @endif
 <div class="">
 
-@include ("department.navbar")
+@include ("liason.navbar")
   <section>
   <p></p>
   </section>

@@ -37,23 +37,36 @@ require __DIR__.'/auth.php';
 
 ///my app
 
-Route::get('/send-ticket',[App\Http\Controllers\sendTicketFormController::class,'createTicket']);
-Route::post('/send-ticket',[App\Http\Controllers\sendTicketFormController::class,'sendTicket'])->name('send-ticket');
-Route::get('/viewtickets',[App\Http\Controllers\adminController::class,'viewTickets'])->name('viewtickets');
-Route::get('/ojo_createticket',[App\Http\Controllers\ojo_Controller::class,'create'])->name('ojo_createtickets');
-Route::get('/ojo_listemails',[App\Http\Controllers\ojo_Controller::class,'listemails'])->name('ojo_listemails');
-Route::get('/ojo_users',[App\Http\Controllers\ojo_Controller::class,'listusers'])->name('ojo_users');
-Route::get('/piechart',[App\Http\Controllers\ojo_Controller::class,'piechart'])->name('piechart');
+//Ticket Controller
+Route::get('/create-ticket',[App\Http\Controllers\TicketController::class,'createTicket'])->name('create-ticket');
+Route::post('/send-ticket',[App\Http\Controllers\TicketController::class,'sendTicket'])->name('send-ticket');
+Route::get('/load-messages',[App\Http\Controllers\TicketController::class,'loadMessages'])->name('load-messages');
+Route::post('/close-ticket',[App\Http\Controllers\TicketController::class,'closeTicket'])->name('close-ticket');
+//ojo_secretariate Controller
+Route::get('/admin-create-ticket',[App\Http\Controllers\AdminController::class,'createTicket'])->name('admin-create-ticket');
+Route::get('/admin-get-emails',[App\Http\Controllers\AdminController::class,'getEmails'])->name('admin-get-emails');
+Route::get('/admin-get-users',[App\Http\Controllers\AdminController::class,'getUsers'])->name('admin-get-users');
+Route::get('/admin-piechart',[App\Http\Controllers\AdminController::class,'pieChart'])->name('admin-piechart');
+Route::post('/admin-search',[App\Http\Controllers\AdminController::class,'search'])->name('admin-search');
+Route::post('/admin-foward-ticket',[App\Http\Controllers\AdminController::class,'fowardTicket'])->name('admin-foward-ticket');
+Route::get('/admin-create-search',[App\Http\Controllers\AdminController::class,'createSearch'])->name('admin-create-search');
+Route::post('/admin-send-ticket',[App\Http\Controllers\AdminController::class,'sendTicket'])->name('admin-send-ticket');
+Route::get('/admin-view-tickets',[App\Http\Controllers\AdminController::class,'viewTickets'])->name('admin-view-tickets');
+Route::get('/admin-foward-search',[App\Http\Controllers\AdminController::class,'adminFowardSearch'])->name('admin-foward-search');
+Route::get('/admin-reply-ticket',[App\Http\Controllers\AdminController::class,'replyTicket'])->name('admin-reply-ticket');
+//department controller
+Route::get('/liason-view-tickets',[App\Http\Controllers\LiasonController::class,'viewTickets'])->name('liason-view-tickets');
+Route::get('/liason',[App\Http\Controllers\LiasonController::class,'ddashboard'])->name('liason');
+Route::post('/liason-close',[App\Http\Controllers\LiasonController::class,'close'])->name('liason-close');
+Route::get('/liason-create-ticket',[App\Http\Controllers\LiasonController::class,'createTicket'])->name('liason-create-ticket');
+//Chart Controller
 Route::get('/barchart',[App\Http\Controllers\ChartController::class,'barchart'])->name('barchart');
-Route::post('/ojo_sendticket',[App\Http\Controllers\ojo_Controller::class,'sendticket'])->name('ojo_sendticket');
-Route::post('/search',[App\Http\Controllers\ojo_Controller::class,'search'])->name('search');
-Route::post('/foward',[App\Http\Controllers\ojo_Controller::class,'foward'])->name('foward');
-Route::get('/createsearch',[App\Http\Controllers\ojo_Controller::class,'createsearch'])->name('createsearch');
-Route::get('/loadMessages',[App\Http\Controllers\sendTicketFormController::class,'loadMessages'])->name('loadMessages');
-Route::post('/dclose',[App\Http\Controllers\sendTicketFormController::class,'close'])->name('dclose');
-Route::get('/dviewtickets',[App\Http\Controllers\department::class,'AllTickets'])->name('dviewtickets');
-Route::get('/department',[App\Http\Controllers\department::class,'ddashboard'])->name('department');
+
+//laratrust
+Route::get('/viewtickets',[App\Http\Controllers\adminController::class,'viewTickets'])->name('viewtickets');
 Route::get('/logout',[App\Http\Controllers\HomeController::class,'logout'])->name('logout');
+
+
 
 Route::get('/dashboard', function () {
     return view('2dashboard');

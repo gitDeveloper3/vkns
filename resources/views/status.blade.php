@@ -22,7 +22,7 @@
   </thead>
 
   <tbody>
-
+@isset($messages)
   @foreach($messages as $key => $value)
 
   <tr>
@@ -31,7 +31,7 @@
   <td>{{ $value->notes}}</td>
   <td>sender</td>
   <td>{{$value->created_at}}</td>
-  <td><form class="" action="{{route('dclose')}}" method="post">
+  <td><form class="" action="{{route('liason-close')}}" method="post">
     @csrf
     <input type="text" name="close" id="close" value="{{$value->FK_uniqueid}}" hidden>
     <button type="submit" class="btn btn-primary">Close</button>
@@ -43,6 +43,7 @@
 
 
   @endforeach
+  @endisset
   <tbody>
   </table>
 </body>

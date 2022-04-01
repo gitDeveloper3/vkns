@@ -4,16 +4,17 @@
 <div class="section-div">
 
 
-<h1 class="heading">Create Ticket</h1>
+<h1 class="heading">Escalated Ticket</h1>
 
 
-  <form action ={{route('admin-send-ticket')}} method="post">
+
+  <form action ={{route('admin-foward-ticket')}} method="post">
     @csrf
 
     <div class='form-group'>
       <label for="ticketnumber">Ticket Number </label>
-      <input type="text" id="ticketnumber" name="ticketnumber" value={{$id ?? ''}}>
-      <a href="{{route('admin-create-search')}}">search</a>
+      <input type="text" id="uniqueid" name="uniqueid" value={{$selected ?? ''}}>
+      <a href="{{route('admin-foward-search')}}">search</a>
     </div>
 
 

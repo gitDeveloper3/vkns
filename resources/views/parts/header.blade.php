@@ -28,7 +28,7 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="{{route('loadMessages')}}"> <i class="fas fa-ticket-alt fa-2x"></i> View Ticket Status</a>
+  <a class="nav-link" href="{{route('load-messages')}}"> <i class="fas fa-ticket-alt fa-2x"></i> View Ticket Status</a>
 </li>--}}
 
 

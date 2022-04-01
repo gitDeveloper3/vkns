@@ -7,16 +7,16 @@ use App\Models\SendTicket;
 use App\Models\Notes;
 use Auth;
 
-class sendTicketFormController extends Controller
+class TicketController extends Controller
 {
 
 
 
-  public function close(Request $request){
+  public function closeTicket(Request $request){
     $ticketid=$request->input('close');
     SendTicket::where('uniqueid', $ticketid)
               ->update(['ticketstatus' => 'closed']);
-        return redirect('/loadMessages');      
+        return redirect('/load-messages');
     //return view('done')->with('message',"success");;
   }
 

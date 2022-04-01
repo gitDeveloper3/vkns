@@ -15,15 +15,15 @@
 
 
     <li class="nav-item">
-          <a class="nav-link" href="{{route('dviewtickets')}}">  <i class="fas fa-ticket-alt fa-2x"></i> All Tickets</a>
+          <a class="nav-link" href="{{route('liason-view-tickets')}}">  <i class="fas fa-ticket-alt fa-2x"></i> All Tickets</a>
         </li>
 
 
       <li class="nav-item">
-        <a class="nav-link" href="{{route('ojo_users')}}"><i class="fas fa-user-alt fa-2x"></i>Users</a>
+        <a class="nav-link" href="#"><i class="fas fa-user-alt fa-2x"></i>Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route('ojo_listemails')}}"><i class="far fa-envelope fa-2x"></i>E-Mails</a>
+        <a class="nav-link" href="#"><i class="far fa-envelope fa-2x"></i>E-Mails</a>
       </li>
 
       <li class="nav-item">

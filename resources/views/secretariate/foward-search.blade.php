@@ -1,7 +1,7 @@
 @include("secretariate.head")
 @include("liason.navbar")
 
-<h2>Admin Panel</h2>
+<h2>Escalated Admin Panel</h2>
 
 <p>Data of the Registered Users.</p>
 
@@ -24,7 +24,7 @@
 </thead>
 
 <tbody>
-
+@isset($list)
 @foreach($list as $key => $value)
 
 <tr>
@@ -35,7 +35,7 @@
 <td>{{ $value->created_at }}</td>
 <td>{{ $value->file }}</td>
 <td>
-<form class="" action="{{route('admin-search')}}" method="post">
+<form class="" action="{{route('admin-create-ticket')}}" method="get">
   @csrf
   <input type="text" name="selected" id="selected" value="{{$value->uniqueid}}" hidden>
 <button type="submit" class="btn btn-primary">Select</button>
@@ -45,6 +45,7 @@
 </tr>
 
 @endforeach
+@endisset
 </tbody>
 </table>
 @include("parts.footer")
