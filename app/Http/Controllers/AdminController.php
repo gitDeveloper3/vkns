@@ -10,7 +10,7 @@ use DB;
 class AdminController extends Controller
 {
 public function adminFowardSearch(Request $request){
-  $tickets=Sendticket::all();
+  $tickets=Sendticket::where(['queue'=>"ombudsman","ticketstatus"=>"open"])->get();
 
 return view('secretariate.foward-search')->with('list',$tickets);
 }
@@ -87,12 +87,12 @@ return redirect('/admin-create-search');
       return view('ojo_createticket')->with('id',$id);
     }
     public function createSearch(Request $request){
-      $tickets=Sendticket::all();
+      $tickets=Sendticket::where(['queue'=>"ombudsman","ticketstatus"=>"open"])->get();
       return view('search')->with('list',$tickets);
     }
 
     public function viewTickets(Request $request){
-      $tickets=Sendticket::where('queue',"ombudsman")->get();
+      $tickets=Sendticket::where(['queue'=>"ombudsman","ticketstatus"=>"open"])->get();
         return view('viewtickets')->with('list',$tickets);
     }
 

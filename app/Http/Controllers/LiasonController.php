@@ -13,7 +13,7 @@ class LiasonController extends Controller
 
 
   public function viewTickets(Request $request){
-    $tickets=Sendticket::where('queue',"department")->get();
+    $tickets=Sendticket::where(['queue'=>"department",'ticketstatus'=>"open"])->get();
       return view('viewtickets')->with('list',$tickets);
   }
 

@@ -21,3 +21,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/tickets',function(){
   return SendTicket::all();
 });
+Route::get("/tickets/{id}",function($id){
+  return SendTicket::find($id);
+});
+Route::post("tickets",function(Request $request){
+return SendTicket::create($request->all());
+});
+Route::delete("tickets/{id}", function($id){
+  SendTicket::find($id)->delete();
+  return 204;
+});
+Route::put("tickets/{id}",function(Request $request,$id){
+  $ticket=SendTicket::findorfail($id)->update($request->all());;
+  return $ticket;
+});
