@@ -1,10 +1,11 @@
 @include ("parts.header")
 
 <body class="d-flex flex-column min-vh-100">
+
+<div class="container">
   <h2>Messages Panel</h2>
 
-  <p>Data of the Registered Users.</p>
-
+  <p>View Responses to yout tickets</p>
   <table class="table table-bordered">
 
   <thead>
@@ -46,6 +47,8 @@
   @endisset
   <tbody>
   </table>
+</div>
+
 </body>
 
 @include("parts.footer")

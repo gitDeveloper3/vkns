@@ -12,13 +12,12 @@
                                               }
 
                                               .card-image {
-                                                border-radius: 8px;
+                                                border-radius: 0px;
                                                 overflow: hidden;
-                                                padding-bottom: 40%;
+                                                padding-bottom: 15%;
                                                 background-image: url('https://s3.amazonaws.com/kampuni/organisation/images/thumbnail/904gvKoQ0Gf15om9Vc8UJW0U3hNjLhNTXOr8Ubcu.jpg');
                                                 background-repeat: no-repeat;
-                                                background-size: 40%;
-
+                                                background-size: 20%;
                                                 background-position: center;
                                                 position: relative;
                                               }
@@ -44,5 +43,15 @@
                                                 padding: 2rem 1rem 0;
                                               }
 .card-text{
-  
+
+}
+label{
+  font-weight: bold!important;
+  color: #145A32 !important;
+}
+.card-decoration .btn-primary {
+  background-color: #145A32 !important;
+}
+.card-decoration .btn-primary:hover {
+  background-color: #C39409 !important;
 }

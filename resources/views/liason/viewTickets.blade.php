@@ -1,7 +1,9 @@
-@include("secretariate.head")
-@include("secretariate.navbar")
+@include ("secretariate.head")
+@include ("secretariate.navbar")
+<body class="d-flex flex-column min-vh-100">
+
 <div class="container">
-  <h2>Escalated Admin Panel</h2>
+  <h2>Admin Panel</h2>
 
   <p>Data of the Registered Users.</p>
 
@@ -17,14 +19,14 @@
   <th>Ref ID</th>
   <th>Created at</th>
   <th>file</th>
-  <th>Select</th>
+  <th>Response</th>
 
   </tr>
 
   </thead>
 
   <tbody>
-  @isset($list)
+
   @foreach($list as $key => $value)
 
   <tr>
@@ -34,20 +36,23 @@
   <td>{{ $value->uniqueid }}</td>
   <td>{{ $value->created_at }}</td>
   <td>{{ $value->file }}</td>
-  <td>
-  <form class="" action="{{route('admin-create-ticket')}}" method="get">
-    @csrf
-    <input type="text" name="selected" id="selected" value="{{$value->uniqueid}}" hidden>
-  <button type="submit" class="btn btn-primary">Select</button>
-  </form>
 
-    </td>
+  <td><form class="" action="{{route('admin-reply-ticket')}}" method="get">
+    @csrf
+  <button type="submit" class="btn btn-primary">Send Response</button>
+  </form></td>
+  <td><form class="" action="{{route('admin-foward-ticket')}}" method="post">
+    @csrf
+    <input type="text" id="uniqueid" name="uniqueid" value="{{$value->uniqueid}}" hidden>
+
+  </form></td>
   </tr>
 
   @endforeach
-  @endisset
   </tbody>
   </table>
 </div>
 
-@include("parts.footer")
+</body>
+
+@include ("parts.footer")

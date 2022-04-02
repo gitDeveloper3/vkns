@@ -24,7 +24,7 @@
 <th>Created at</th>
 <th>file</th>
 <th>Response</th>
-<th>Foward Back To OJO</th>
+
 
 </tr>
 

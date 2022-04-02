@@ -46,15 +46,14 @@
   width: 50%;
   margin: auto;
   margin-top: 2rem;
-  padding: 4rem 0;
-
-
+  margin-bottom: 40px;
+/**  padding: 4rem 0; **/
 
 }
 
 .heading{
   text-align: center;
-  color: BLACK;
+  color: #145A32;
   font-size: 50px;
 }
 
@@ -62,10 +61,38 @@
   width: 40rem;
   justify-content: center;
   align-items: center;
-background-color: pink;
   height: 18rem;
   margin: 4rem;
-  background-color: blue;
+}
+
+.card {
+    border: 2px solid black !important;
+    border-color: #C39409 !important;
+
+}
+
+/**
+.card-decoration .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #8064A2 !important;
+}
+**/
+/**
+.card-decoration .btn-primary {
+  background-color: #145A32 !important;
+}
+.card-decoration .btn-primary:hover {
+  background-color: #C39409 !important;
+}
+**/
+.btn-primary {
+  background-color: #145A32 !important;
+}
+.btn-primary:hover {
+  background-color: #C39409 !important;
+}
+
+.card-border{
+border: red;
 }
 
 .secretariate-card-style{
@@ -76,4 +103,11 @@ background-color: pink;
   height: 18rem;
   margin: 4rem 1rem;
   background-color: blue;
+}
+table thead{
+
+}
+label{
+  font-weight: bold!important;
+  color: #145A32 !important;
 }

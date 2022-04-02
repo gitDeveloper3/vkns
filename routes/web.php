@@ -59,6 +59,7 @@ Route::get('/liason-view-tickets',[App\Http\Controllers\LiasonController::class,
 Route::get('/liason',[App\Http\Controllers\LiasonController::class,'ddashboard'])->name('liason');
 Route::post('/liason-close',[App\Http\Controllers\LiasonController::class,'close'])->name('liason-close');
 Route::get('/liason-create-ticket',[App\Http\Controllers\LiasonController::class,'createTicket'])->name('liason-create-ticket');
+Route::get('/liason-create-search',[App\Http\Controllers\LiasonController::class,'createSearch'])->name('liason-create-search');
 //Chart Controller
 Route::get('/barchart',[App\Http\Controllers\ChartController::class,'barchart'])->name('barchart');
 

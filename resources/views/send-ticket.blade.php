@@ -12,10 +12,11 @@
 <link rel="stylesheet" href="{{ asset('css/send-ticket.css') }}">
 </head>
 @include ("parts.header")
+
 <div class="send-ticket">
 <div class="container">
   <div class="card">
-  <div class="card-image">
+  <div class="">
     <h2 class="card-heading">
 
     </h2>
@@ -37,7 +38,9 @@
         <div class="form-group">
           <label for="file">Select File</label>
           <input type="file" id="file" name="file" aria-describedby="emailHelp" class="form-control">
-          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="form-group card-decoration">
+          <button type="submit" class="btn btn-primary ">Submit</button>
             </div>
 
 </form>

@@ -1,7 +1,8 @@
 @include ("secretariate.head")
+@include ("secretariate.navbar")
 <body class="d-flex flex-column min-vh-100">
 
-
+<div class="container">
   <h2>Admin Panel</h2>
 
   <p>Data of the Registered Users.</p>
@@ -51,6 +52,8 @@
   @endforeach
   </tbody>
   </table>
+</div>
+
 </body>
 
 @include ("parts.footer")

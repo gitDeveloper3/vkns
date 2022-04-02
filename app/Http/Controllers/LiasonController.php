@@ -14,7 +14,7 @@ class LiasonController extends Controller
 
   public function viewTickets(Request $request){
     $tickets=Sendticket::where(['queue'=>"department",'ticketstatus'=>"open"])->get();
-      return view('viewtickets')->with('list',$tickets);
+      return view('liason.viewTickets')->with('list',$tickets);
   }
 
   public function liasonDashboard(Request $request){
@@ -31,6 +31,12 @@ class LiasonController extends Controller
       SendTicket::where('uniqueid', $ticketid)
                 ->update(['ticketstatus' => 'closed']);
       return view('status')->with('message',"success");;
+    }
+
+
+    public function createSearch(Request $request){
+      $tickets=Sendticket::where(['queue'=>"department","ticketstatus"=>"open"])->get();
+      return view('search')->with('list',$tickets);
     }
 
 
